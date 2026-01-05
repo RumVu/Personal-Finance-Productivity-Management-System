@@ -1,0 +1,18 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: excommunicado-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: Minhdo123@
+      MYSQL_DATABASE: Excommunicado
+      MYSQL_USER: cocghe
+      MYSQL_PASSWORD: 1003
+      TZ: Asia/Ho_Chi_Minh
+    ports:
+      - "3308:3306"
+    volumes:
+      - excommunicado_mysql_data:/var/lib/mysql
+
+volumes:
+  excommunicado_mysql_data:
